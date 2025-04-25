@@ -71,3 +71,7 @@ kubeadm join 10.9.223.209:6443 --token gte92r.rp5jtnn0cl10aqnm \
         --discovery-token-ca-cert-hash sha256:ba1d475eee7fcbbdc694285045fe5aab49b43d63fe1e278b1b002d4f294578cb
 
 export KUBECONFIG=/etc/kubernetes/admin.conf
+
+kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
+
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.49.0/deploy/static/provider/baremetal/deploy.yaml
