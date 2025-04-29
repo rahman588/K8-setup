@@ -1,3 +1,5 @@
+sudo -i, sudo su -
+
 sudo vi /etc/hostname
 # sysctl params required by setup, params persist across reboots
 cat <<EOF | sudo tee /etc/sysctl.d/k8s.conf
@@ -59,6 +61,13 @@ kubeadm init --apiserver-advertise-address 10.9.223.209 --pod-network-cidr 10.24
 
 kubeadm join 10.9.223.209:6443 --token gte92r.rp5jtnn0cl10aqnm \
         --discovery-token-ca-cert-hash sha256:ba1d475eee7fcbbdc694285045fe5aab49b43d63fe1e278b1b002d4f294578cb
+
+Exit
+
+ mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
 
 export KUBECONFIG=/etc/kubernetes/admin.conf
 
