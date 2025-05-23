@@ -13,7 +13,7 @@ sudo sysctl --system
 sysctl net.ipv4.ip_forward
 
 sudo swapoff -a
-sudo sed -i '/ swap / s/^\(.*\)$/#\1/' /etc/fstab
+#sudo sed -i '/ swap / s/^\(.*\)$/#\1/' /etc/fstab
 
 cat /etc/fstab
 
